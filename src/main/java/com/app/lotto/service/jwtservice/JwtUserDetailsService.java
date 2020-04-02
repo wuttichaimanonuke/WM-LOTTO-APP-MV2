@@ -1,4 +1,4 @@
-package com.app.lotto.service;
+package com.app.lotto.service.jwtservice;
 
 import java.util.ArrayList;
 

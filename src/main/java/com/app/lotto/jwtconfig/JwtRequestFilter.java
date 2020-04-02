@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.app.lotto.service.JwtUserDetailsService;
+import com.app.lotto.service.jwtservice.JwtUserDetailsService;
 
 import io.jsonwebtoken.ExpiredJwtException;
 
@@ -68,8 +68,11 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 				// Spring Security Configurations successfully.
 				SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
 			}
+		} else {
+			log.info("======<JwtRequestFilter> 222.");
 		}
 		log.info("======<JwtRequestFilter> doFilterInternal.");
+		log.info("======request = {} / response = {}", request, response);
 		chain.doFilter(request, response);
 	}
 }

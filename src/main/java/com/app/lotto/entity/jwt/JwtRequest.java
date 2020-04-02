@@ -1,4 +1,4 @@
-package com.app.lotto.entity;
+package com.app.lotto.entity.jwt;
 
 import java.io.Serializable;
 
